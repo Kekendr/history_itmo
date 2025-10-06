@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Петербургскія Вѣдомости</title>
     <style>
-        /* СТИЛИ НАХОДЯТСЯ ЗДЕСЬ, ВНУТРИ ОДНОГО ФАЙЛА */
         @import url('https://fonts.googleapis.com/css2?family=Oranienbaum&family=Old+Standard+TT:wght@400;700&display=swap');
 
         body {
@@ -60,18 +59,23 @@
             margin-top: 10px;
         }
 
-        /* ----- ГЛАВНОЕ ИСПРАВЛЕНИЕ, КОТОРОЕ НЕ СЛОМАЕТСЯ ----- */
-        .content {
-            display: flex; /* Создаем контейнер для колонок */
-            gap: 35px; /* Расстояние между ними */
-            align-items: flex-start; /* Выравниваем колонки по верху */
+        /* ----- ПУЛЕНЕПРОБИВАЕМОЕ ИСПРАВЛЕНИЕ ----- */
+        .content::after {
+            content: "";
+            display: table;
+            clear: both;
         }
 
-        .column {
-            flex: 1; /* Каждая колонка занимает половину места */
-            min-width: 0; /* Техническое свойство для стабильности */
+        .column-left {
+            float: left;
+            width: 48%;
         }
-        /* ---------------------------------------------------- */
+
+        .column-right {
+            float: right;
+            width: 48%;
+        }
+        /* -------------------------------------- */
 
         .rubric {
             margin-bottom: 25px;
@@ -165,10 +169,9 @@
             </div>
         </header>
 
-        <!-- ЗДЕСЬ ВСЯ СТРУКТУРА КОНТЕНТА -->
         <div class="content">
             <!-- НАЧАЛО ЛЕВОЙ КОЛОНКИ -->
-            <div class="column">
+            <div class="column-left">
                 <div class="rubric">
                     <h2>ПЕРЕДОВИЦА</h2>
                     <h3>Лѣтопись Великихъ Свершеній: Россія – Имперія!</h3>
@@ -184,7 +187,7 @@
             <!-- КОНЕЦ ЛЕВОЙ КОЛОНКИ -->
 
             <!-- НАЧАЛО ПРАВОЙ КОЛОНКИ -->
-            <div class="column">
+            <div class="column-right">
                 <div class="rubric">
                     <h2>СВѢТСКАЯ ХРОНИКА</h2>
                     <h3>Ассамблея въ честь мира и новаго титула Государя!</h3>
