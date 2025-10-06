@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Петербургскія Вѣдомости</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oranienbaum&family=Old+Standard+TT:wght@400;700&display=swap');
-
+        /* БОЛЬШЕ НИКАКИХ ВНЕШНИХ @import. ШРИФТЫ БУДУТ БРАТЬСЯ С КОМПЬЮТЕРА ПОЛЬЗОВАТЕЛЯ */
         body {
+            /* Используем стандартные, но красивые шрифты, которые есть у всех */
+            font-family: Georgia, "Times New Roman", serif;
             background-color: #dcd7c9;
             padding: 40px 20px;
         }
@@ -16,7 +17,7 @@
             max-width: 1000px;
             margin: auto;
             background-color: #f4f1e8;
-            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            /* БОЛЬШЕ НИКАКОЙ ВНЕШНЕЙ КАРТИНКИ ФОНА */
             border: 1px solid #4d4d4d;
             padding: 30px 45px;
             box-shadow: 8px 8px 20px rgba(0,0,0,0.6);
@@ -32,14 +33,13 @@
         .header-top-line {
             display: flex;
             justify-content: space-between;
-            font-family: 'Old Standard TT', serif;
             font-size: 14px;
             color: #444;
             padding: 0 10px;
         }
 
         .header h1 {
-            font-family: 'Oranienbaum', serif;
+            font-family: Georgia, serif; /* Замена кастомного шрифта на стандартный */
             font-size: 5em;
             font-weight: 700;
             color: #222;
@@ -49,7 +49,6 @@
         }
         
         .header-bottom-line {
-            font-family: 'Old Standard TT', serif;
             font-size: 16px;
             font-style: italic;
             color: #333;
@@ -59,7 +58,6 @@
             margin-top: 10px;
         }
 
-        /* ----- ПУЛЕНЕПРОБИВАЕМОЕ ИСПРАВЛЕНИЕ ----- */
         .content::after {
             content: "";
             display: table;
@@ -75,14 +73,13 @@
             float: right;
             width: 48%;
         }
-        /* -------------------------------------- */
 
         .rubric {
             margin-bottom: 25px;
         }
 
         h2 {
-            font-family: 'Oranienbaum', serif;
+            font-family: Georgia, serif;
             font-size: 2.2em;
             font-weight: 700;
             color: #333;
@@ -94,7 +91,6 @@
         }
 
         h3 {
-             font-family: 'Old Standard TT', serif;
              font-size: 1.3em;
              font-weight: 700;
              font-style: italic;
@@ -104,7 +100,6 @@
         }
 
         p {
-            font-family: 'Old Standard TT', serif;
             font-size: 14px;
             line-height: 1.8;
             text-align: justify;
@@ -119,7 +114,7 @@
 
         .drop-cap {
             float: left;
-            font-family: 'Oranienbaum', serif;
+            font-family: Georgia, serif;
             font-size: 6em;
             line-height: 0.8em;
             margin: 8px 10px 0 0;
@@ -170,7 +165,6 @@
         </header>
 
         <div class="content">
-            <!-- НАЧАЛО ЛЕВОЙ КОЛОНКИ -->
             <div class="column-left">
                 <div class="rubric">
                     <h2>ПЕРЕДОВИЦА</h2>
@@ -184,9 +178,7 @@
                      <p>Не токмо ратными дѣлами славится нынѣ Россія, но и преуспѣяніемъ въ дѣлахъ мануфактурныхъ. По волѣ Государя нашего, по всей странѣ множатся заводы желѣзные и полотняные. Особливо же славенъ Уралъ, гдѣ открыты богатыя залежи рудъ, дающія государству металлъ не хуже шведскаго. Бергъ-коллегія неусыпно слѣдитъ за развитіемъ горнаго дѣла, дабы казна имѣла прибытокъ, а армія — лучшія пушки и мушкеты.</p>
                 </div>
             </div>
-            <!-- КОНЕЦ ЛЕВОЙ КОЛОНКИ -->
 
-            <!-- НАЧАЛО ПРАВОЙ КОЛОНКИ -->
             <div class="column-right">
                 <div class="rubric">
                     <h2>СВѢТСКАЯ ХРОНИКА</h2>
@@ -202,7 +194,6 @@
                     <p><b>РОЗЫСКЪ:</b> Сбѣжалъ изъ имѣнія князя Голицына приписной крестьянинъ Ивашка Петровъ, отъ роду 25 лѣтъ, росту средняго, волосы русые, на лѣвой щекѣ шрамъ. Всякому, кто изловитъ и доставитъ бѣглеца, будетъ дано вознагражденіе.</p>
                 </div>
             </div>
-            <!-- КОНЕЦ ПРАВОЙ КОЛОНКИ -->
         </div>
     </div>
 </body>
